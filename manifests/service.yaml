@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: Workflow1
+  namespace: namespace-de-prueba
+spec:
+  type: LoadBalancer
+  selector:
+    app: Workflow1
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
