@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Workflow1
+  labels:
+    app: Workflow1
+  namespace: namespace-de-prueba
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Workflow1
+  template:
+    metadata:
+      labels:
+        app: Workflow1
+    spec:
+      containers:
+        - name: Workflow1
+          image: dtscontrol.azurecr.io/image-workflow-1685048774801:latest
+          ports:
+            - containerPort: 3000
